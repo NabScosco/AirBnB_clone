@@ -1,18 +1,19 @@
 #!/usr/bin/python3
 
+"""
+BaseModel that defines all common attributes/methods for other classes
+"""
+
 
 from datetime import datetime
 import uuid
 
-"""
-BaseModel that defines all common attributes/methods for other classes
-"""
 
 class BaseModel():
     def __init__(self, *args, **kwargs):
 
         if len(kwargs) != 0:
-            for key,value in kwargs.items():
+            for key, value in kwargs.items():
                 if key == "__class__":
                     continue
                 elif key == "created_at" or key == "updated_at":
