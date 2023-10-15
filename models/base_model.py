@@ -20,12 +20,11 @@ class BaseModel:
             updated_at (datetime): Timestamp of when the instance is
             last updated.
         """
-        if  kwargs:
+        if kwargs:
             for key, value in kwargs.items():
                 if key != '__class__':
                     if key == 'created_at' or key == 'updated_at':
-                        setattr(self, key, datetime.strptime( value,
-                            "%Y-%m-%dT%H:%M:%S.%f"))
+                        setattr(self, key, datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f"))
                     else:
                         setattr(self, key, value)
         else:
@@ -59,4 +58,5 @@ class BaseModel:
         Returns:
             str: A formatted string with class name, id, and attributes.
         """
+
         return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"

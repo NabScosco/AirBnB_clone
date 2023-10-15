@@ -1,8 +1,13 @@
 #!/usr/bin/python3
+"""
+Mnodule: file_storage.py
+
+This defines a a `FileStorage` class.
+"""
 
 import json
 from models.base_model import BaseModel
-
+import os
 
 class FileStorage:
     """
