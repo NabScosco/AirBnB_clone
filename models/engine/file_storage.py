@@ -6,8 +6,7 @@ This defines a a `FileStorage` class.
 """
 
 import json
-from models.base_model import BaseModel
-import os
+
 
 class FileStorage:
     """
