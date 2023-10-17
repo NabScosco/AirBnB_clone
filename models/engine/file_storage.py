@@ -71,9 +71,9 @@ class FileStorage:
         """
 
         new_dict = {}
-        for key, value in FileStorage.__objects.items():
+        for key, value in self.__objects.items():
             new_dict[key] = value.to_dict()
-        with open(FileStorage.__file_path, 'w') as file:
+        with open(self.__file_path, 'w') as file:
             json.dump(new_dict, file)
 
     def reload(self):
@@ -85,7 +85,7 @@ class FileStorage:
         """
 
         try:
-            with open(FileStorage.__file_path, 'r') as file:
-                FileStorage.__objects = json.load(file)
+            with open(self.__file_path, 'r') as file:
+                self.__objects = json.load(file)
         except FileNotFoundError:
             pass
